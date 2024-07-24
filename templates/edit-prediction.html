@@ -1,0 +1,28 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Let's edit your prediction!
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="form-group">
+                    <label>Type</label>
+                    <input type="text" class="form-control" name="title" value="{{prediction.type}}" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea name="description" class="form-control" rows="3" required>{{prediction.description}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" class="form-control" name="title" value="{{prediction.city}}" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Edit your prediction</button>
+                <button onclick="window.location.href='/delete/{{prediction.id}}'"
+                        type="button" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
